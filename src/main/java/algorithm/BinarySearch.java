@@ -22,60 +22,6 @@ public class BinarySearch {
     }
 
     /**
-     * 请用递归方式实现二叉树的先序、中序和后序的遍历打印。
-     * 给定一个二叉树的根结点root，请依次返回二叉树的先序，中序和后续遍历(二维数组的形式)。
-     */
-
-
-    public static int[][] convert(TreeNode root) {
-        int[][] result = new int[3][];
-        if(root == null) return result;
-        List<Integer> resultPre = new ArrayList<Integer>();
-        List<Integer> resultMid = new ArrayList<Integer>();
-        List<Integer> resultAfter = new ArrayList<Integer>();
-        preOrder(root, resultPre);
-        midOrder(root, resultMid);
-        afterOrder(root, resultAfter);
-        result[0] = new int[resultPre.size()];
-        result[1] = new int[resultMid.size()];
-        result[2] = new int[resultAfter.size()];
-        for(int i = 0; i<result[0].length; i++){
-            result[0][i] = resultPre.get(i);
-            result[1][i] = resultMid.get(i);
-            result[2][i] = resultAfter.get(i);
-        }
-        return result;
-    }
-
-    private static void preOrder(TreeNode root, List<Integer> result) {
-        if(root == null) {
-            return;
-        }
-        result.add(root.val);
-        preOrder(root.left, result);
-        preOrder(root.right, result);
-    }
-
-    private static void midOrder(TreeNode root, List<Integer> result) {
-        if(root == null) {
-            return;
-        }
-
-        midOrder(root.left, result);
-        result.add(root.val);
-        midOrder(root.right, result);
-    }
-
-    private static void afterOrder(TreeNode root, List<Integer> result) {
-        if(root == null) {
-            return;
-        }
-        afterOrder(root.left, result);
-        afterOrder(root.right, result);
-        result.add(root.val);
-    }
-
-    /**
      * 如果更快的求一个整数k的n次方。如果两个整数相乘并得到结果的时间复杂度为O(1)，得到整数k的N次方的过程请实现时间复杂度为O(logN)的方法。
      * 给定k和n，请返回k的n次方，为了防止溢出，请返回结果Mod 1000000007的值。
      * 测试样例：
