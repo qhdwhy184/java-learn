@@ -11,10 +11,14 @@ import java.util.Stack;
  */
 public class BinaryTree {
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(1);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(3);
-        System.out.println(new Gson().toJson(convertLoop(root)));
+        Integer iOut = 1;
+        changeI(iOut);
+
+        System.out.println(iOut);
+    }
+
+    private static void changeI(Integer i) {
+        i = 2;
     }
 
     public static class TreeNode {
@@ -25,6 +29,39 @@ public class BinaryTree {
         public TreeNode(int val) {
             this.val = val;
         }
+    }
+
+    /**
+     * 有一棵二叉树，请设计一个算法判断这棵二叉树是否为平衡二叉树。
+     * 给定二叉树的根结点root，请返回一个bool值，代表这棵树是否为平衡二叉树。
+     * @param root
+     * @return
+     */
+    public static boolean check(TreeNode root) {
+        return checkBalanceAndGetDepth(root) != -1;
+
+    }
+
+    private static int checkBalanceAndGetDepth(TreeNode root){
+        if (root == null) {
+            return 0;
+        }
+
+        int leftDepth = checkBalanceAndGetDepth(root.left);
+        if(leftDepth == -1){
+            return -1;
+        }
+
+        int rightDepth = checkBalanceAndGetDepth(root.right);
+        if(rightDepth == -1){
+            return -1;
+        }
+
+        int depth = leftDepth >= rightDepth ? leftDepth : rightDepth;
+        if(Math.abs(leftDepth - rightDepth) <= 1 ){
+            return depth + 1;
+        } else
+            return -1;
     }
 
     /**

@@ -7,6 +7,21 @@ import org.junit.Test;
  */
 public class BinaryTreeTest {
     @Test
+    public void checkTest(){
+        boolean result = BinaryTree.check(mockData1());
+        assert (result);
+
+        result = BinaryTree.check(mockData2());
+        assert (result);
+
+        result = BinaryTree.check(mockData3());
+        assert (!result);
+
+
+        result = BinaryTree.check(mockData4());
+        assert (!result);
+    }
+    @Test
     public void printTreeTest(){
         int[][] result = BinaryTree.printTree(mockData1());
         assert (result[0][0] == 0);
