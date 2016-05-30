@@ -7,6 +7,29 @@ import org.junit.Test;
  */
 public class BinaryTreeTest {
     @Test
+    public void printTreeTest(){
+        int[][] result = BinaryTree.printTree(mockData1());
+        assert (result[0][0] == 0);
+
+        result = BinaryTree.printTree(mockData2());
+        assert (result[0][0] == 0);
+        assert (result[1][0] == 1);
+        assert (result[1][1] == 2);
+
+        result = BinaryTree.printTree(mockData3());
+        assert (result[0][0] == 0);
+        assert (result[1][0] == 1);
+        assert (result[2][0] == 2);
+
+
+        result = BinaryTree.printTree(mockData4());
+        assert (result[0][0] == 0);
+        assert (result[1][0] == 1);
+        assert (result[2][0] == 2);
+    }
+
+
+    @Test
     public void convertLoopTest(){
 
         int[][] result = BinaryTree.convertLoop(mockData1());
