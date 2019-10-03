@@ -11,7 +11,7 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * Created by wangyuanhui on 16/4/25.
+ * Created on 16/4/25.
  */
 public class ProducerConsumer {
     ReentrantLock lock = new ReentrantLock();
