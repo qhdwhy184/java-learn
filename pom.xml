@@ -62,11 +62,5 @@
             <artifactId>protobuf-java</artifactId>
             <version>2.6.1</version>
         </dependency>
-        <dependency>
-            <groupId>com.vmware.nsx.management</groupId>
-            <artifactId>nsx-protobuf</artifactId>
-            <version>1.0</version>
-        </dependency>
     </dependencies>
-
 </project>
