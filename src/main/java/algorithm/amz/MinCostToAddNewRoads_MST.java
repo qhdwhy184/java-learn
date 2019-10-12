@@ -108,46 +108,6 @@ public class MinCostToAddNewRoads_MST {
                 {1,3,4},
                 {2,4,2},
                 {3,5,1}}; // N = 5, target = -1
-//        char[][] testCase3 = new char[][]{
-//                {'O', 'O', 'O', 'O'},
-//                {'D', 'O', 'D', 'O'},
-//                {'O', 'O', 'O', 'X'},
-//                {'O', 'D', 'D', 'O'}};
-//        char[][] testCase4 = new char[][]{
-//                {'O', 'O', 'O', 'O'},
-//                {'D', 'O', 'D', 'O'},
-//                {'O', 'O', 'O', 'O'},
-//                {'O', 'D', 'D', 'X'}};
-//        char[][] testCase5 = new char[][]{
-//                {'O', 'O', 'O', 'O'},
-//                {'D', 'O', 'D', 'D'},
-//                {'O', 'O', 'O', 'O'},
-//                {'O', 'D', 'D', 'X'}};
-//        char[][] testCase6 = new char[][]{
-//                {'O', 'O', 'O', 'O'},
-//                {'D', 'O', 'D', 'D'},
-//                {'O', 'O', 'O', 'O'},
-//                {'O', 'D', 'X', 'O'}};
-//        char[][] testCase7 = new char[][]{
-//                {'O', 'O', 'O', 'X'},
-//                {'D', 'O', 'D', 'D'},
-//                {'O', 'O', 'O', 'O'},
-//                {'O', 'D', 'D', 'O'}};
-//        char[][] testCase8 = new char[][]{
-//                {'O', 'O', 'X', 'D'},
-//                {'D', 'O', 'D', 'D'},
-//                {'O', 'O', 'O', 'O'},
-//                {'O', 'D', 'D', 'O'}};
-//        char[][] testCase9 = new char[][]{
-//                {'O', 'O', 'O', 'D'},
-//                {'D', 'O', 'D', 'D'},
-//                {'X', 'O', 'O', 'O'},
-//                {'O', 'D', 'D', 'O'}};
-//        char[][] testCase10 = new char[][]{
-//                {'O', 'O', 'O', 'D'},
-//                {'D', 'O', 'D', 'D'},
-//                {'O', 'X', 'O', 'O'},
-//                {'O', 'D', 'D', 'O'}};
         System.out.println("testCase1:" + new MinCostToAddNewRoads_MST().solution(3, testCase1));
         Assert.assertEquals(6, new MinCostToAddNewRoads_MST().solution(3, testCase1));
         System.out.println("testCase2:" + new MinCostToAddNewRoads_MST().solution(4, testCase2));
@@ -156,21 +116,6 @@ public class MinCostToAddNewRoads_MST {
         Assert.assertEquals(10, new MinCostToAddNewRoads_MST().solution(5, testCase3));
         System.out.println("testCase4:" + new MinCostToAddNewRoads_MST().solution(5, testCase4));
         Assert.assertEquals(-1, new MinCostToAddNewRoads_MST().solution(5, testCase4));
-//        System.out.println("testCase3:" + new TreasureIsland().minRouts(testCase3));
-//        Assert.assertEquals(5, new TreasureIsland().minRouts(testCase3));
-//        System.out.println("testCase4:" + new TreasureIsland().minRouts(testCase4));
-//        Assert.assertEquals(6, new TreasureIsland().minRouts(testCase4));
-//        System.out.println("testCase5:" + new TreasureIsland().minRouts(testCase5));
-//        Assert.assertEquals(6, new TreasureIsland().minRouts(testCase5));
-//        System.out.println("testCase6:" + new TreasureIsland().minRouts(testCase6));
-//        Assert.assertEquals(5, new TreasureIsland().minRouts(testCase6));
-//        System.out.println("testCase7:" + new TreasureIsland().minRouts(testCase7));
-//        Assert.assertEquals(3, new TreasureIsland().minRouts(testCase7));
-//        System.out.println("testCase8:" + new TreasureIsland().minRouts(testCase8));
-//        Assert.assertEquals(2, new TreasureIsland().minRouts(testCase8));
-//        System.out.println("testCase9:" + new TreasureIsland().minRouts(testCase9));
-//        Assert.assertEquals(4, new TreasureIsland().minRouts(testCase9));
-//        System.out.println("testCase10:" + new TreasureIsland().minRouts(testCase10));
-//        Assert.assertEquals(3, new TreasureIsland().minRouts(testCase10));
+
     }
 }
