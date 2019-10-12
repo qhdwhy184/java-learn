@@ -36,6 +36,8 @@ import java.util.List;
  * 1 <= connections[i][0], connections[i][1] <= N
  * 0 <= connections[i][2] <= 10^5
  * connections[i][0] != connections[i][1]
+ *
+ * ref: https://www.jianshu.com/p/98e8c9102f4a
  */
 public class MinCostToAddNewRoads_MST {
     private int findGroupNo(int currentCityNo, int[] cityGroups){
