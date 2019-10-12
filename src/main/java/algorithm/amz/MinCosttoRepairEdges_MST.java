@@ -47,6 +47,32 @@ import java.util.Set;
  * Output: 79
  */
 public class MinCosttoRepairEdges_MST {
+    // only for online judgement
+//    /**
+//     * proxy for online judgement
+//     * @param n
+//     * @param edges
+//     * @param edgesToRepair
+//     * @return
+//     */
+//    public int minCostToRepairEdges(int n, int[][] edges, int[][] edgesToRepair) {
+//        if((edges == null || edges.length == 0)
+//                && (edgesToRepair == null || edgesToRepair.length ==0))
+//            return -1;
+//
+//        List<List<Integer>> convertedEdges = new ArrayList<>();
+//        for(int i = 0; i<edges.length; i++) {
+//            convertedEdges.add(Arrays.asList(edges[i][0], edges[i][1]));
+//        }
+//
+//        List<List<Integer>> convertedEdgesToRepair = new ArrayList<>();
+//        for(int i = 0; i<edgesToRepair.length; i++) {
+//            convertedEdgesToRepair.add(
+//                    Arrays.asList(edgesToRepair[i][0], edgesToRepair[i][1], edgesToRepair[i][2]));
+//        }
+//        return solution(n, convertedEdges, convertedEdgesToRepair);
+//    }
+
     public int solution(int n, List<List<Integer>> edges, List<List<Integer>> edgesToRepair) {
         Set<Pair> toRepair = new HashSet<>();
         for(List<Integer> brokenEdge : edgesToRepair) {
@@ -61,9 +87,14 @@ public class MinCosttoRepairEdges_MST {
         for(List<Integer> edge : edges) {
             int start = edge.get(0);
             int end = edge.get(1);
+
             if(!toRepair.contains(new Pair(start, end))
                     && !toRepair.contains(new Pair(end, start))) {
-                nodeGroup[start] = end;
+                int x = findGroupNo(start, nodeGroup);
+                int y = findGroupNo(end, nodeGroup);
+                if(x != y) {
+                    nodeGroup[x] = y;
+                }
             }
         }
 
@@ -83,6 +114,14 @@ public class MinCosttoRepairEdges_MST {
                 nodeGroup[x] = y;
             }
         }
+// only for online judgement
+//        int groupNo = findGroupNo(1, nodeGroup);
+//        for(int i = 2; i < nodeGroup.length; i++) {
+//            if(groupNo != findGroupNo(i, nodeGroup)) {
+//                return -1;
+//            }
+//        }
+
         return cost;
     }
 
